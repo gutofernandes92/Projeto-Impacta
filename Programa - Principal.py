@@ -7,15 +7,15 @@ janela.title('Cadastro de Fornecedor')
 janela.geometry("400x800")
 janela.configure(bg="white")
 
-# dados_conexao = (
-#     "Driver={SQL Server};"
-#     "Server=LAPTOP-UT7HVQ65\SQLEXPRESS;"
-#     "Database=Ads_Material;"
-# )
-# conexao = pyodbc.connect(dados_conexao)
-# cursor = conexao.cursor()
+dados_conexao = (
+    "Driver={SQL Server};"
+    "Server=DESKTOP-FFAT61K\SQLEXPRESS;"
+    "Database=Ads_Material;"
+)
+conexao = pyodbc.connect(dados_conexao)
+cursor = conexao.cursor()
 
-# print('Conexão com sucesso!!')
+print('Conexão com sucesso!!')
 
 def atualizar_fornecedor():
     nome = entry_nome.get()
@@ -57,6 +57,7 @@ def cadastrar_fornecedor ():
 
 def  consultar_fornecedor():
     nome = entry_nome.get()
+
 
     comando = f""" SELECT * FROM Fornecedores
                    WHERE Fornecedores.nome = '{nome}';
