@@ -54,6 +54,19 @@ def cadastrar_fornecedor ():
     print('Cadastro Realizado com Sucesso!!')
 
 
+#Apagar dados
+    entry_nome.delete(0,"end")
+    entry_cidade.delete(0,"end")
+    entry_bairro.delete(0,"end")
+    entry_ende.delete(0,"end")
+    entry_telefone.delete(0,"end")
+    entry_email.delete(0,"end")
+    entry_cnpj.delete(0,"end")
+    entry_produto.delete(0,"end")
+    entry_categoria.delete(0,"end")
+    entry_lote.delete(0,"end")
+
+
 
 def  consultar_fornecedor():
     nome = entry_nome.get()
@@ -86,6 +99,7 @@ def  deletar_fornecedor():
     
     print('Dados de fornecedor excluido!!')
 
+    
 
 entry_nome = tk.Entry(janela, width=35, bd=2)
 entry_nome.grid(row=0, column=1, padx=0, pady=0)
