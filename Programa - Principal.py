@@ -48,6 +48,16 @@ def cadastrar_fornecedor ():
 
     comando = f"""INSERT INTO Fornecedores (Nome, Cidade, Bairro, Endereço, Telefone, Email, cnpj, Produto, Categoria, Lote)
         VALUES ('{nome}','{cidade}','{bairro}','{endereco}','{telefone}','{email}', '{cnpj}', '{produto}','{categoria}', {lote})"""
+    
+    
+    cursor.execute(comando)
+    cursor.commit()
+    print('Cadastro Realizado com Sucesso!!')
+
+
+    comando = f"""INSERT INTO Produtos (Nome, Produto, Categoria, Lote)
+        VALUES ('{nome}','{produto}','{categoria}',{lote})"""
+    
 
     cursor.execute(comando)
     cursor.commit()
@@ -69,12 +79,13 @@ def cadastrar_fornecedor ():
 
 
 def  consultar_fornecedor():
-    nome = entry_nome.get()
+    produto = entry_produto.get()
 
 
     comando = f""" SELECT * FROM Fornecedores
-                   WHERE Fornecedores.nome = '{nome}';
+                   WHERE Fornecedores.produto = '{produto}';
                    """
+    
 
     cursor.execute(comando)
 
